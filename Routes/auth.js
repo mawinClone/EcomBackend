@@ -1,10 +1,13 @@
 const express = require('express')
 const router = express.Router()
 
+const {register, login} = require('../Controllers/auth')
 
-router.get('/auth', (req, res) => {
-    res.send('auth route')
-})
+// http://localhost:5000/api/register
+router.post('/register', register)
+
+// http://localhost:5000/api/login
+router.post('/login', login)
 
 
 
