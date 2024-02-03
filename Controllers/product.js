@@ -1,6 +1,6 @@
 const Product = require('../Models/Product')
 
-
+// read product by id
 exports.read = async (req, res) => {
     try {
         const id = req.params.id
@@ -12,6 +12,7 @@ exports.read = async (req, res) => {
     }
 }
 
+// read all produce
 exports.list = async (req, res) => {
     try {
         const producted = await Product.find({}).exec();
@@ -21,6 +22,8 @@ exports.list = async (req, res) => {
         res.status(500).send('Server Error')
     }
 }
+
+// create new product
 exports.create = async (req, res) => {
     try {
         console.log(req.body)
@@ -31,6 +34,8 @@ exports.create = async (req, res) => {
         res.status(500).send('Server Error')
     }
 }
+
+// find and update product by id
 exports.update = async (req, res) => {
     try {
         const id = req.params.id
@@ -44,6 +49,8 @@ exports.update = async (req, res) => {
         res.status(500).send('Server Error')
     }
 }
+
+// remove product by id
 exports.remove = async (req, res) => {
     try {
         const id = req.params.id
